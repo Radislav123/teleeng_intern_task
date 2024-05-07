@@ -19,6 +19,7 @@ class Settings:
 
         self.ADMIN_PANEL_SECRETS_FOLDER = f"{self.SECRETS_FOLDER}/admin_panel"
         self.DJANGO_CREDENTIALS_PATH = f"{self.ADMIN_PANEL_SECRETS_FOLDER}/django.json"
+        self.ADMIN_USER_CREDENTIALS_PATH = f"{self.ADMIN_PANEL_SECRETS_FOLDER}/admin_user.json"
 
         # Настройки логгера
         self.LOG_FORMAT = "[%(asctime)s] - [%(levelname)s] - %(name)s -" \

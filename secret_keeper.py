@@ -31,14 +31,22 @@ class SecretKeeper:
     class Django(Module):
         secret_key: str
 
+    class User(Module):
+        username: str
+        email: str
+        password: str
+        subscribed: str
+
     database: Database
     telegram_bot: TelegramBot
     django: Django
+    admin_user: User
 
     def __init__(self, settings: "Settings") -> None:
         self.add_module("database", settings.DATABASE_CREDENTIALS_PATH)
         self.add_module("telegram_bot", settings.TELEGRAM_BOT_CREDENTIALS_PATH)
         self.add_module("django", settings.DJANGO_CREDENTIALS_PATH)
+        self.add_module("admin_user", settings.ADMIN_USER_CREDENTIALS_PATH)
 
     @staticmethod
     def read_json(path: str) -> dict:
