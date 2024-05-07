@@ -1,0 +1,22 @@
+# файлы IntelliJ IDEA
+.idea/
+
+# временные файлы
+temp*
+*.drawio.bkp
+~*
+
+# логи
+logs/
+
+# миграции БД
+migrations/
+
+# компилируемые файлы
+__pycache__/
+
+# python-окружение
+venv/
+
+# данные бота
+.state-save/
