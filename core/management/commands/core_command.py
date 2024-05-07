@@ -9,6 +9,6 @@ from core import settings
 class CoreCommand(BaseCommand, abc.ABC):
     settings = settings.Settings()
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         self.logger = logger.Logger(self.__class__.__name__)

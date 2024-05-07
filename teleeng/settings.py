@@ -13,11 +13,13 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 
 from core.settings import Settings as CoreSettings
+from survey.settings import Settings as SurveySettings
 from telegram_bot.settings import Settings as TelegramBotSettings
 
 
 core_settings = CoreSettings()
 telegram_bot_settings = TelegramBotSettings()
+survey_settings = SurveySettings()
 
 # Build paths inside the project like this: BASE_DIR / "subdir".
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
 
     core_settings.APP_NAME,
     telegram_bot_settings.APP_NAME,
+    survey_settings.APP_NAME,
 ]
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

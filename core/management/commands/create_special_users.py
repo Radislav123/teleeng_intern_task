@@ -7,18 +7,17 @@ from secret_keeper import SecretKeeper
 class Command(core_command.CoreCommand):
     help = "Создает специальных пользователей"
 
-    def handle(self, *args, **options):
+    def handle(self, *args, **options) -> None:
         users = (
             self.settings.secrets.admin_user,
         )
         for user in users:
             self.create(user)
 
-    @staticmethod
-    def create(user: SecretKeeper.User):
+    def create(self, user: SecretKeeper.User) -> None:
         user_model = get_user_model()
         if not user_model.objects.filter(username = user.username).exists():
             user_model.objects.create_superuser(**user.get_dict())
-            print(f"The {user.username} was created.")
+            self.logger.info(f"The {user.username} was created.")
         else:
-            print(f"The {user.username} already exists.")
+            self.logger.info(f"The {user.username} already exists.")

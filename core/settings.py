@@ -21,6 +21,10 @@ class Settings:
         self.DJANGO_CREDENTIALS_PATH = f"{self.ADMIN_PANEL_SECRETS_FOLDER}/django.json"
         self.ADMIN_USER_CREDENTIALS_PATH = f"{self.ADMIN_PANEL_SECRETS_FOLDER}/admin_user.json"
 
+        self.RESOURCES_FOLDER = "resources"
+        self.SERVEY_RESOURCES_FOLDER = f"{self.RESOURCES_FOLDER}/survey"
+        self.QUIZZES_PATH = f"{self.SERVEY_RESOURCES_FOLDER}/quizzes.json"
+
         # Настройки логгера
         self.LOG_FORMAT = "[%(asctime)s] - [%(levelname)s] - %(name)s -" \
                           " (%(filename)s).%(funcName)s(%(lineno)d) - %(message)s"
