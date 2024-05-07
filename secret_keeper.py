@@ -25,19 +25,19 @@ class SecretKeeper:
         HOST: str
         PORT: str
 
-    class BotTelegram(Module):
+    class TelegramBot(Module):
         token: str
 
     class Django(Module):
         secret_key: str
 
     database: Database
-    bot_telegram: BotTelegram
+    telegram_bot: TelegramBot
     django: Django
 
     def __init__(self, settings: "Settings") -> None:
         self.add_module("database", settings.DATABASE_CREDENTIALS_PATH)
-        self.add_module("bot_telegram", settings.BOT_TELEGRAM_CREDENTIALS_PATH)
+        self.add_module("telegram_bot", settings.TELEGRAM_BOT_CREDENTIALS_PATH)
         self.add_module("django", settings.DJANGO_CREDENTIALS_PATH)
 
     @staticmethod

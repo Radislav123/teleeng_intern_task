@@ -14,8 +14,8 @@ class Settings:
         self.DATABASE_SECRETS_FOLDER = f"{self.SECRETS_FOLDER}/database"
         self.DATABASE_CREDENTIALS_PATH = f"{self.DATABASE_SECRETS_FOLDER}/credentials.json"
 
-        self.BOT_TELEGRAM_SECRETS_FOLDER = f"{self.SECRETS_FOLDER}/telegram_bot"
-        self.BOT_TELEGRAM_CREDENTIALS_PATH = f"{self.BOT_TELEGRAM_SECRETS_FOLDER}/credentials.json"
+        self.TELEGRAM_BOT_SECRETS_FOLDER = f"{self.SECRETS_FOLDER}/telegram_bot"
+        self.TELEGRAM_BOT_CREDENTIALS_PATH = f"{self.TELEGRAM_BOT_SECRETS_FOLDER}/credentials.json"
 
         self.ADMIN_PANEL_SECRETS_FOLDER = f"{self.SECRETS_FOLDER}/admin_panel"
         self.DJANGO_CREDENTIALS_PATH = f"{self.ADMIN_PANEL_SECRETS_FOLDER}/django.json"
