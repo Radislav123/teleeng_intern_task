@@ -1,6 +1,9 @@
 # файлы IntelliJ IDEA
 .idea/
 
+# секреты
+secrets/
+
 # временные файлы
 temp*
 *.drawio.bkp
@@ -12,6 +15,9 @@ logs/
 # миграции БД
 migrations/
 
+# БД
+db.sqlite3
+
 # компилируемые файлы
 __pycache__/
 
@@ -20,3 +26,6 @@ venv/
 
 # данные бота
 .state-save/
+
+# задание
+TASK.md
