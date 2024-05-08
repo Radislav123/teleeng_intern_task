@@ -18,6 +18,6 @@ class Command(core_command.CoreCommand):
         user_model = get_user_model()
         if not user_model.objects.filter(username = user.username).exists():
             user_model.objects.create_superuser(**user.get_dict())
-            self.logger.info(f"The {user.username} was created.")
+            self.logger.info(f"{user.username} was created.")
         else:
-            self.logger.info(f"The {user.username} already exists.")
+            self.logger.info(f"{user.username} already exists.")

@@ -32,14 +32,14 @@ class Command(survey_command.SurveyCommand):
             for question_json in quiz_json["questions"]:
                 question = models.Question(
                     quiz = quiz,
-                    value = question_json["value"]
+                    text = question_json["text"]
                 )
                 questions.append(question)
                 if "prepared_answers" in question_json:
                     question_prepared_answers = [models.PreparedAnswer(
                         question = question,
-                        value = value
-                    ) for value in question_json["prepared_answers"]]
+                        text = text
+                    ) for text in question_json["prepared_answers"]]
                     prepared_answers.extend(question_prepared_answers)
 
         models.Quiz.objects.bulk_create(quizzes)
