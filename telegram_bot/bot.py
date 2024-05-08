@@ -341,13 +341,13 @@ class Bot(BotServiceMixin, telebot.TeleBot):
                 reply_markup = telebot.types.InlineKeyboardMarkup(keyboard)
                 self.send_message(
                     user.telegram_chat_id,
-                    next_questions[0].text,
+                    [next_questions[0].text, "Выберите ответ."],
                     reply_markup = reply_markup
                 )
             else:
                 question_message = self.send_message(
                     user.telegram_chat_id,
-                    next_questions[0].text,
+                    [next_questions[0].text, "Введите ответ."],
                 )
                 self.register_next_step_handler_by_chat_id(
                     user.telegram_chat_id,
