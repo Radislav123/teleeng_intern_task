@@ -25,7 +25,9 @@ class Command(survey_command.SurveyCommand):
         questions = []
         prepared_answers = []
         for quiz_json in quizzes_json:
-            quiz = models.Quiz()
+            quiz = models.Quiz(
+                name = quiz_json["name"]
+            )
             quizzes.append(quiz)
             for question_json in quiz_json["questions"]:
                 question = models.Question(
